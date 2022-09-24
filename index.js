@@ -63,8 +63,8 @@ function defineRules() {
   log(levelText(`Level 1:Aapke screen par kuch adhoore meme dialogs diye jaenge, aapako sahee jawaab ka nambar bataana hoga.
 
 Teen mai se do jawab sahi hone par hum agle padaaav ki or badege.`));
-startLevel(levelOne);
-score > 1 ? levelOneCleared() : failed();
+  startLevel(levelOne);
+  score > 1 ? levelOneCleared() : failed();
 }
 
 // Function to get the response of question
@@ -111,12 +111,11 @@ function levelTwoInstructions() {
 
 Jeetne ke lie sabhee prashnon ka sahee uttar dena zaroori hai, koi bhi 
  Galat jawab dene par aap khel se bahaar ho jayege.`));
-  if(readLine.keyInYNStrict(questionText('Kya aap hamare sath bane rehna chahenge?'))){
+  if (readLine.keyInYNStrict(questionText('Kya aap hamare sath bane rehna chahenge?'))) {
     startLevel(levelTwo)
   } else {
-    log(endMessage);
-    log(endScore(`Apka final score hai: ${score}`))
-    restartOption();
+    log(endScore(`Apka final score hai: ${score}`));
+    log(inputText(endMessage));
   }
 }
 
@@ -130,9 +129,16 @@ function failed() {
   restartOption()
 }
 
+function levelTwoCleared() {
+  log(inputText(`Meme ke gyaan ka shaandaar pradarshan, bohot hi umda khele aap`));
+  log(endScore(`Apka final score hai: ${score}`))
+  restartOption();
+}
+function resetScore() {
+  score = 0;
+}
 function restartOption() {
-  let response = readLine.keyInYNStrict(questionText('Do you want to restart?'));
-  if (response) {
+  if (readLine.keyInYNStrict(questionText('Do you want to restart?'))) {
     console.clear();
     resetScore()
     defineRules();
@@ -142,18 +148,9 @@ function restartOption() {
   else {
     console.clear();
     log(inputText(`Thanks for playing ${userName}.`))
-    resetScore()
   }
 }
 
-function levelTwoCleared() {
-  log(inputText(`Meme ke gyaan ka shaandaar pradarshan, bohot hi umda khele aap`));
-  log(endScore(`Apka final score hai: ${score}`))
-  restartOption();
-}
-function resetScore() {
-  score = 0;
-}
 
 welcomeUser();
 greetings();
