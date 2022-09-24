@@ -60,9 +60,9 @@ function greetings() {
 
 function defineRules() {
   log(inputText(`Ye ek sasta KBC hai, just for fun, so try to read in Amitabh Sir voice:`));
-  log(levelText(`Level 1:Aapke screen par kuch adhoore meme dialogs diye jaenge, aapako sahee jawaab ka nambar bataana hoga.
+  log(levelText(`Level 1:Aapke screen par kuch adhoore meme dialogs diye jaenge, aapako sahee jawaab ka number bataana hoga.
 
-Teen mai se do jawab sahi hone par hum agle padaaav ki or badege.`));
+Teen mai se do jawab sahi hone par hum agle padaav ki or badege.`));
   startLevel(levelOne);
   score > 1 ? levelOneCleared() : failed();
 }
