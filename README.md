@@ -5,6 +5,6 @@
 
 Used NodeJs to built Multi level CLI Game.
 
-> Bonus Work
+> Bonus Work Done
 - Explore ReadlineSync other functions.
 - Explore Chalk.
